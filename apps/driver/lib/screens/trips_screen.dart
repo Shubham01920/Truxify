@@ -294,6 +294,7 @@ class _TripsScreenState extends State<TripsScreen> {
     final rawItems = _itemsByTripId[tripId] ?? [];
 
     final tripItems = rawItems.map((item) {
+      debugPrint(item.toString());
       return TripItem(
         customerName: item['customer_name']?.toString() ?? 'Unknown',
         goods: item['goods']?.toString() ?? '',
@@ -305,7 +306,6 @@ class _TripsScreenState extends State<TripsScreen> {
         specialRequirements:
           item['special_requirements']?.toString(),
       );
-      debugPrint(item.toString());
     }).toList();
 
     return Trip(
